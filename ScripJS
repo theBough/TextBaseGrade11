@@ -1,0 +1,13 @@
+var enterKey = document.getElementById("input")
+
+enterKey.addEventListener("keyup",function(event){
+  event.preventDefault();
+  if(event.keyCode === 13){
+    start();
+    enterKey.focus();
+  }
+});
+
+function start(){
+  document.getElementById("title").innerHTML = "I hope this works!"
+}
