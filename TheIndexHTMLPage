@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>think of something</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1 id = "title">Boughen's Website</h1>
+    <h4 id = "instructions">Welcome to my text based</br>adnventure. You're goal is to collect 9 trophies. </br> Good luck</h4>
+    <input type = "text" id = "input" onfocus="this.select()" autocomplete="off">
+    
+    <script src="script.js"></script>
+  </body>
+</html>
