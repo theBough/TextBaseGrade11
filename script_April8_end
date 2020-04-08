@@ -1,0 +1,65 @@
+var enterKey = document.getElementById("input")
+var instructions = document.getElementById("instructions");
+var goBool = false;
+var room = "front";
+var kitchen = "You find yourself in a beautiful kitchen, it smells wonderful.";
+var front = "You fund yourself in a clean spotless room."
+var help =
+  "**********************************</br>\
+|   Press:</br></br>\
+|   h - help</br>\
+|   g - go</br>\
+***********************************";
+
+enterKey.addEventListener("keyup", function (event) {
+  event.preventDefault();
+  if (event.keyCode === 13) {
+    start();
+    enterKey.focus();
+  }
+});
+
+function start() {
+
+  var input = enterKey.value;
+  if (goBool) {
+    whatWay()
+  } else if (input == "h") {
+    instructions.innerHTML += "</br>>> " + input + "</br>" + help;
+  } else if (input == "g") {
+    instructions.innerHTML += "</br>>> " + input + "</br> What direction would you like to go?</br><small>(e - East, w - West, n - North, s - South)</small> "
+    goBool = true;
+  }
+  enterKey.value = "";
+}
+
+function whatWay() {
+  var input = enterKey.value;
+  goBool = false;
+  switch (input) {
+    case ("e"):
+      headEast();
+      break;
+    case ("w"):
+      headWest();
+      break;
+
+  }//end switch
+}//end function whatway
+
+function headEast() {
+  switch (room) {
+    case "front":
+      instructions.innerHTML += "</br>" + kitchen;
+      room = "kitchen";
+      break
+  }//end Switch
+}//end function headEast
+
+function headWest() {
+  switch (room) {
+    case "kitchen":
+      instructions.innerHTML += "</br>" + front;
+      break
+  }//end Switch
+}//end function headEast
